@@ -26,8 +26,8 @@ namespace SenaiApi
             #region Injeção de Dependência
 
             builder.Services.AddScoped<IPessoaService, PessoaService>();
-            builder.Services.AddScoped<Repository.Interface.IPessoaRepository, PessoaRepository>();
-            builder.Services.AddScoped(typeof(IGenericrepository<>),typeof(Repository.Repository.GenericRepository));
+            builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
+            builder.Services.AddScoped(typeof(IGenericrepository<>),typeof(GenericRepository<>));
             #endregion
 
             var app = builder.Build();

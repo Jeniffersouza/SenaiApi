@@ -26,9 +26,6 @@ namespace SenaiApi.Service.Service
             throw new NotImplementedException();
         }
 
-        void IPessoaService.BuscarTodos()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
