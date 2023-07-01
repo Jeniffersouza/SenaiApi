@@ -1,5 +1,4 @@
-﻿using SenaiApi.Domain.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace SenaiApi.Repository.Interface
 {
-    public interface IPessoaRepository
+    public interface IGenericrepository<T>  where T : class
     {
-        List<Pessoa> PegarTodasAsPessoas();
+        IQueryable<T> GetAll();
+
     }
 }

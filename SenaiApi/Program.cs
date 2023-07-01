@@ -18,14 +18,16 @@ namespace SenaiApi
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            
+
             builder.Services.AddDbContext<ApiContext>(options =>
             options.UseNpgsql(builder.Configuration.GetValue<string>("ConnectionStrings:ApiSenai")));
 
             #region Injeção de Dependência
 
             builder.Services.AddScoped<IPessoaService, PessoaService>();
-            builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
-
+            builder.Services.AddScoped<Repository.Interface.IPessoaRepository, PessoaRepository>();
+            builder.Services.AddScoped(typeof(IGenericrepository<>),typeof(Repository.Repository.GenericRepository));
             #endregion
 
             var app = builder.Build();
