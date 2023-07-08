@@ -13,5 +13,6 @@ namespace SenaiApi.Service.Interface
         List<Pessoa> BuscarTodos();
 
         bool   Salvar(PessoaDto pessoa);
+        bool RemoverPessoa(long id);    
     }
 }

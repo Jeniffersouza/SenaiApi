@@ -34,6 +34,13 @@ namespace SenaiApi.Repository.Repository
             _context.Set<T>().Update(entity);
         }
 
+        public void Remover(long id)
+        {
+            var entidade = _context.Set<T>().First(C => C.Id == id);
+            _context.Set<T>().Remove(entidade);
+            _context.SaveChanges();
+        }
+
 
 
 

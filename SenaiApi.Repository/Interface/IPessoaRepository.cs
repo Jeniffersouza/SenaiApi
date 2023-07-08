@@ -11,5 +11,6 @@ namespace SenaiApi.Repository.Interface
     {
         List<Pessoa> PegarTodasAsPessoas();
         bool SalvarPessoa(Pessoa pessoa);
+        bool RemoverPessoa(long id);
     }
 }

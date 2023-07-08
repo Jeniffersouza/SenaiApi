@@ -32,5 +32,20 @@ namespace SenaiApi.Repository.Repository
                 return false;
             }
         }
+
+        public bool RemoverPessoa(long id)
+        {
+            try
+            {
+                Remover(id);
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
     }
 }

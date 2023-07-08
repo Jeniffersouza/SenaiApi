@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SenaiApi.Domain.Dtos;
+using SenaiApi.Domain.Entidades;
 using SenaiApi.Service.Interface;
 
 namespace SenaiApi.Controllers
@@ -35,6 +37,24 @@ namespace SenaiApi.Controllers
             {
                 return BadRequest();
             }          
+        }
+
+        [HttpDelete]
+
+        public IActionResult Delete(long id)
+        {
+            try
+            {
+                _pessooaService.RemoverPessoa(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
+            }
+
+
+
         }
 
     }
