@@ -14,7 +14,8 @@ namespace SenaiApi.Controllers
         {
             _pessooaService = pessoaService;
         }
-        
+
+        [HttpGet]
         public IActionResult Get()
         {
             var pessoas = _pessooaService.BuscarTodos();
@@ -27,7 +28,7 @@ namespace SenaiApi.Controllers
         {
             try
             {
-                
+                _pessooaService.Salvar(pessoa);
                 return Ok();
             }
             catch(Exception ex)

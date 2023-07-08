@@ -12,6 +12,6 @@ namespace SenaiApi.Service.Interface
     {
         List<Pessoa> BuscarTodos();
 
-        void Salvar(PessoaDto pessoa);
+        bool   Salvar(PessoaDto pessoa);
     }
 }

@@ -10,5 +10,6 @@ namespace SenaiApi.Repository.Interface
     public interface IPessoaRepository
     {
         List<Pessoa> PegarTodasAsPessoas();
+        bool SalvarPessoa(Pessoa pessoa);
     }
 }

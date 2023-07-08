@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using SenaiApi.Repository.Context;
 using SenaiApi.Repository.Interface;
@@ -28,6 +29,14 @@ namespace SenaiApi
             builder.Services.AddScoped<IPessoaService, PessoaService>();
             builder.Services.AddScoped<IPessoaRepository, PessoaRepository>();
             builder.Services.AddScoped(typeof(IGenericrepository<>),typeof(GenericRepository<>));
+            #endregion
+
+            #region AutoMapper
+            MapperConfiguration mapperConfiguration = new MapperConfiguration(mapperConfig =>
+            {
+                mapperConfig.AddMaps(new[] { "SenaiApi.Service" });
+            });
+            builder.Services.AddSingleton(mapperConfiguration.CreateMapper());
             #endregion
 
             var app = builder.Build();
